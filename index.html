@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hridoy Hossen - Website Developer, Android App Designer, and Multiple Services Provider"
+    />
+    <meta
+      name="keywords"
+      content="Hridoy Hossen, Website Developer, Android App Designer, Web Design, App Development, Portfolio"
+    />
+    <meta name="author" content="Hridoy Hossen" />
+
+    <title>Hridoy Hossen - Portfolio</title>
+
+    <!-- Google Fonts (Roboto) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      /* CSS Variables for GitHub Dark Theme */
+      :root {
+        --color-bg-primary: #0d1117; /* GitHub dark background */
+        --color-bg-secondary: #161b22; /* Secondary background color */
+        --color-bg-tertiary: #21262d; /* Tertiary background color */
+        --color-text-primary: #c9d1d9; /* Primary text color */
+        --color-text-secondary: #8b949e; /* Secondary text color */
+        --color-border: #30363d; /* Border color */
+        --color-link: #58a6ff; /* Link color */
+        --color-link-hover: #1f6feb; /* Link hover color */
+        --color-border-hover: #fff;
+        --color-accent: #7d43c6; /* Accent color (e.g., for buttons) */
+        --color-icon: #6e7681; /* Icon color */
+        --color-navbar-bg: #161b22; /* Custom navbar background */
+        --color-navbar-text: #c9d1d9; /* Navbar text color */
+        --color-navbar-link-hover: #1f6feb; /* Navbar link hover color */
+        --color-glow: rgba(0, 255, 0, 0.5); /* Green color for glow effect */
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Customizing the Navbar */
+      nav.navbar {
+        background-color: transparent; /* Background of navbar */
+        width: 100%;
+      }
+
+      nav.navbar .navbar-brand img {
+        height: 40px; /* Adjust logo size */
+      }
+      nav.navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      nav.navbar .navbar-brand h5 {
+        margin-top: 5px;
+      }
+
+      nav.navbar .navbar-brand,
+      nav.navbar .nav-link {
+        color: var(--color-navbar-text); /* Navbar text color */
+      }
+
+      nav.navbar .nav-link:hover {
+        color: var(--color-navbar-link-hover); /* Hover effect for links */
+      }
+
+      nav.navbar .navbar-toggler {
+        border-color: var(--color-border); /* Custom border for toggler */
+      }
+
+      /* Customize the Font Awesome burger icon */
+      nav.navbar .navbar-toggler-icon {
+        color: var(--color-icon); /* Custom icon color */
+      }
+
+      .navbar-toggler .fas.fa-bars {
+        color: white; /* White color for the Font Awesome icon */
+      }
+
+      .dropdown-menu {
+        background-color: var(--color-bg-secondary); /* Dropdown background */
+        color: var(--color-text-primary); /* Dropdown text color */
+      }
+
+      .dropdown-menu .dropdown-item {
+        color: var(--color-text-primary); /* Dropdown text color */
+      }
+
+      .dropdown-menu .dropdown-item:hover {
+        background-color: var(
+          --color-bg-tertiary
+        ); /* Hover effect on dropdown */
+        color: var(--color-link-hover); /* Hovered text in dropdown */
+      }
+
+      #overview {
+        margin-top: 50px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 70%;
+      }
+      #overview .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: var(--color-bg-secondary);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        border: 1px solid var(--color-border);
+      }
+
+      #overview .content img {
+        width: 150px;
+      }
+      #overview .content h1 {
+        margin-top: 10px;
+        font-weight: 800;
+      }
+      #overview .content h1 span {
+        color: var(--color-accent);
+      }
+      #overview .information {
+        width: 100%;
+      }
+      #overview .information .accordion-item {
+        background-color: var(
+          --color-bg-secondary
+        ); /* Match secondary background */
+        color: var(--color-text-primary); /* Primary text color */
+        border: 1px solid var(--color-border); /* Border for accordion items */
+      }
+
+      #overview
+        .information
+        .accordion-item
+        .accordion-header
+        .accordion-button {
+        background-color: var(
+          --color-bg-secondary
+        ); /* Background for accordion button */
+        color: var(--color-text-primary); /* Text color for accordion button */
+        border-bottom: 1px solid var(--color-border); /* Border for the button */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+      }
+
+      #overview
+        .information
+        .accordion-item
+        .accordion-header
+        .accordion-button:hover {
+        background-color: var(--color-bg-tertiary); /* Hover effect on button */
+        color: var(--color-link-hover); /* Hover text color */
+      }
+
+      #overview .information .accordion-item .accordion-body {
+        background-color: var(
+          --color-bg-tertiary
+        ); /* Background for accordion body */
+        color: var(--color-text-secondary); /* Secondary text color */
+      }
+
+      #overview .information .accordion-item .accordion-button:not(.collapsed) {
+        background-color: var(
+          --color-bg-tertiary
+        ); /* Background when expanded */
+        color: var(--color-text-primary); /* Text color when expanded */
+      }
+
+      #message {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0%;
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        border-radius: 50%;
+        color: #000;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        margin-bottom: 30px;
+        margin-right: 30px;
+      }
+
+      @media screen and (max-width: 1150px){
+        #overview {
+            width: 80%;
+            margin-top: 20px;
+        }
+      }
+
+      @media screen and (max-width: 1000px){
+        #overview {
+            width: 90%;
+            margin-top: 20px;
+        }
+      }
+      @media screen and (max-width: 768px){
+        #overview {
+            width: 100%;
+            margin-top: 20px;
+        }
+      }
+    </style>
+
+    <!-- Favicon (Optional) -->
+    <link rel="icon" href="me_circle.png" type="image/x-icon" />
+  </head>
+  <body>
+    <a id="message" href="https://m.me/hridoyhossen936">
+        <i class="fa-brands fa-facebook-messenger"></i>
+    </a>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <!-- Replace navbar title with logo -->
+        <a class="navbar-brand" href="#">
+          <img src="me_circle.png" alt="Logo" />
+          <h5>It's Me</h5>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+          <!-- Font Awesome burger icon -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <!-- Dropdown first -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Design</a></li>
+                <li><a class="dropdown-item" href="#">Web Development</a></li>
+                <li><a class="dropdown-item" href="#">App Development</a></li>
+              </ul>
+            </li>
+            <!-- Other navbar items -->
+            <li class="nav-item">
+                <a class="nav-link" href="#overview">Overview</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about_info">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Section overview -->
+    <section id="overview">
+      <div class="content">
+        <img src="me_circle.png" alt="me" />
+        <h1>Hello i'm <span>Hridoy Hossen</span></h1>
+        <p style="text-align: center;">As a versatile website and Android app developer, I specialize in creating dynamic, user-friendly applications tailored to meet your unique needs. With expertise in Python and a strong design sense, I ensure that each project is not only functional but also visually appealing. From responsive web designs to seamless mobile experiences, I am committed to delivering high-quality solutions that drive engagement and satisfaction. Let’s bring your ideas to life!</p>
+        <div class="inside_content">
+            <div class="card-group" style="gap: 20px;">
+                <div class="card" style="background-color: #0d1117; border: 1px solid var(--color-border);">
+                    <img src="dsc02281-edit-edit-5-edit.blog-lead-space-40x21-1.webp" class="card-img-top" alt="Artificial Intelligence" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Artificial Intelligence</h5>
+                        <p class="card-text">Artificial Intelligence (AI) refers to the simulation of human intelligence in machines designed to think and act like humans. AI encompasses machine learning, natural language processing, robotics, and more, enabling computers to perform tasks that typically require human intelligence.</p>
+                        <p class="card-text"><small style="color: var(--color-text-secondary);">Last updated 2 days ago</small></p>
+                    </div>
+                </div>
+                <div class="card" style="background-color: #0d1117; border: 1px solid var(--color-border);">
+                    <img src="python-blog-image.jpg" class="card-img-top" alt="Python" style="width: 100%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Python</h5>
+                        <p class="card-text">Python is a high-level, interpreted programming language known for its readability and versatility. It is widely used in web development, data analysis, artificial intelligence, scientific computing, and more.</p>
+                        <p class="card-text"><small style="color: var(--color-text-secondary);">Last updated 2 days ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+      </div>
+
+      <div id="about_info" class="information">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Designer - Crafting Stunning Visuals
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>Your brand deserves a captivating look!</strong> As a
+                designer, I focus on creating visually appealing and
+                user-friendly designs that resonate with your target audience.
+                Whether it's logos, UI/UX, or graphic design, I make sure your
+                brand leaves a lasting impression. Let me help you stand out
+                with designs that speak your brand's language and captivate your
+                audience's attention.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Web Developer - Building Dynamic Websites
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>Need a powerful online presence?</strong> As a web
+                developer, I specialize in bringing ideas to life through code.
+                I build responsive, fast, and visually appealing websites
+                tailored to your business needs. From sleek landing pages to
+                complex web apps, I’ll make sure your website works seamlessly
+                across all devices and platforms, ensuring a smooth user
+                experience that turns visitors into customers.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                App Developer - Crafting Innovative Mobile Solutions
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>Looking to expand your reach with mobile apps?</strong>
+                As an app developer, I create intuitive, user-friendly mobile
+                applications for Android devices that are built to perform. I
+                focus on both the aesthetic and functional aspects of apps,
+                ensuring your users get a flawless experience every time they
+                interact with your app. Let's build a mobile solution that puts
+                your business in your customers' hands.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript to enable cursor-following glow effect -->
+    <script>
+        const content = document.querySelector('#overview .content');
+      
+        content.addEventListener('mousemove', (e) => {
+          const rect = content.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+      
+          // Customize glow effect properties
+          const glowSize = '0px'; // Size of the glow
+          const glowColor = 'rgba(0, 255, 0, 0.2)'; // Color and opacity of the glow
+          const blurSize = '350px'; // Size of the blur effect
+      
+          // Create multiple layers of radial gradients to simulate a blur effect
+          const glow = `
+            radial-gradient(circle at ${x}px ${y}px, ${glowColor} ${glowSize}, transparent ${blurSize})
+          `;
+      
+          content.style.background = glow;
+        });
+      
+        content.addEventListener('mouseleave', () => {
+          // Reset glow effect when the cursor leaves the content area
+          content.style.background = 'none';
+        });
+      </script>      
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
